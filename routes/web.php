@@ -18,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/','App\Http\Controllers\DashboardController@index')->name('dashboard.index');
+
+
+Route::get('/categories','App\Http\Controllers\CategoryController@index')->name('categories.index');
+Route::get('/categories/create','App\Http\Controllers\CategoryController@create')->name('categories.create');
+Route::post('/categories/store','App\Http\Controllers\CategoryController@store')->name('categories.store');
+Route::get('/categories/edit/{id}','App\Http\Controllers\CategoryController@edit')->name('categories.edit');
+Route::put('/categories/update/{id}','App\Http\Controllers\CategoryController@update')->name('categories.update');
+Route::get('/categories/destroy/{id}','App\Http\Controllers\CategoryController@destroy')->name('categories.destroy');

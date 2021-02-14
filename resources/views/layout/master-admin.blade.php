@@ -27,10 +27,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- calendar -->
     <link rel="stylesheet" href="{{asset('admin/css/monthly.css')}}">
     <!-- //calendar -->
+
+    <link rel="stylesheet" href="{{asset('admin/css/jConfirm.css')}}">
     <!-- //font-awesome icons -->
     <script src="{{asset('admin/js/jquery2.0.3.min.js')}}"></script>
     <script src="{{asset('admin/js/raphael-min.js')}}"></script>
     <script src="{{asset('admin/js/morris.js')}}"></script>
+
+
 </head>
 <body>
 <section id="container">
@@ -54,6 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- morris JavaScript -->
 <!-- calendar -->
 <script type="text/javascript" src="{{assert('admin/js/monthly.js')}}"></script>
+<script src="{{asset('admin/js/jConfirm.min.js')}}"></script>
+
 <script>
     $(document).ready(function() {
         //BOX BUTTON SHOW AND CLOSE
@@ -139,5 +145,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!-- //calendar -->
+
+<script>
+    //Code nút xoá
+    $('[data-toggle="confirm"]').jConfirm({
+        question: 'Bạn có chắc chắn xoá?',
+        confirm_text: 'Có',
+        deny_text: 'Không',
+        size: 'medium',
+        theme: 'white',
+        follow_href: true
+    });
+    //Tự tắt thông báo
+    $("div.alert").delay(10000).slideUp();
+    //Upload file
+    $(document).ready(function() {
+        bsCustomFileInput.init()
+    });
+    //Dropdown menu
+    $(document).ready(function() {
+        $('[data-toggle="movie-dropdown"]').niceSelect();
+    });
+</script>
 </body>
 </html>

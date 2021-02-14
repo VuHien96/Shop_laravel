@@ -15,8 +15,8 @@
                         <span>Danh mục</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="typography.html">Danh sách danh mục</a></li>
-                        <li><a href="glyphicon.html">Tạo mới</a></li>
+                        <li><a href="{{route('categories.index')}}">Danh sách danh mục</a></li>
+                        <li><a href="{{route('categories.create')}}">Tạo mới</a></li>
                     </ul>
                 </li>
             </ul>

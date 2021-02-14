@@ -9,30 +9,29 @@
                     <div class="col-lg-12">
                         <section class="panel">
                             <header class="panel-heading">
-                                Sửa danh mục
+                                Tạo mới danh mục
                             </header>
                             <div class="panel-body">
                                 <div class="position-center">
-                                    <form role="form" action="{{route('categories.update',$category->id)}}" method="post">
-                                        @method('PUT')
+                                    <form role="form" action="{{route('categories.store')}}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Tên danh mục</label>
                                             <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                                   placeholder="Nhập tên danh mục" value="{{$category->name}}">
+                                                   placeholder="Nhập tên danh mục">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Miêu tả</label>
-                                            <input  class="form-control " id="comment" name="description" required="" value="{{$category->description}}">
+                                            <textarea rows="8" class="form-control " id="comment" name="description" required=""></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputSuccess">Hiển thị</label>
                                             <select class="form-control input-lg m-bot15" name="status">
-                                                <option value="1" {{ $category->status == 1 ? 'selected' : '' }}>Hien thi</option>
-                                                <option value="0" {{ $category->status == 0 ? 'selected' : '' }}>an</option>
+                                                <option value="0">Ẩn</option>
+                                                <option value="1">Hiển thị</option>
                                             </select>
                                         </div>
-                                        <button type="submit" class="btn btn-info">Luu</button>
+                                        <button type="submit" class="btn btn-info">Thêm</button>
                                     </form>
                                 </div>
 
