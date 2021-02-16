@@ -16,7 +16,17 @@
                     </a>
                     <ul class="sub">
                         <li><a href="{{route('categories.index')}}">Danh sách danh mục</a></li>
-                        <li><a href="{{route('categories.create')}}">Tạo mới</a></li>
+                        <li><a href="{{route('categories.create')}}">Tạo mới danh mục</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Thương hiệu</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{route('brands.index')}}">Danh sách thương hiệu</a></li>
+                        <li><a href="{{route('brands.create')}}">Tạo mới thương hiệu</a></li>
                     </ul>
                 </li>
             </ul>
