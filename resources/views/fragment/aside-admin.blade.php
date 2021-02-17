@@ -21,12 +21,22 @@
                 </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-bookmark-o"></i>
                         <span>Thương hiệu</span>
                     </a>
                     <ul class="sub">
                         <li><a href="{{route('brands.index')}}">Danh sách thương hiệu</a></li>
                         <li><a href="{{route('brands.create')}}">Tạo mới thương hiệu</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-table"></i>
+                        <span>Sản phẩm</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{route('products.index')}}">Danh sách sản phẩm</a></li>
+                        <li><a href="{{route('products.create')}}">Tạo mới sản phẩm</a></li>
                     </ul>
                 </li>
             </ul>
