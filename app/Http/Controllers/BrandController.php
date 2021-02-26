@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -99,5 +101,13 @@ class BrandController extends Controller
         $brand->delete();
 
         return redirect()->route('brands.index')->with(['message'=>'Xóa thành công','alert'=>'success']);
+    }
+
+    public function getProductByBrand($id)
+    {
+        $brands = Brand::all();
+        $categories = Category::all();
+        $products = Product::where('brand_id', $id)->latest()->paginate(6);
+        return view('pages.brand.show-product-brand', compact('products', 'categories', 'brands'));
     }
 }

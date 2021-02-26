@@ -62,7 +62,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->price}}</td>
-                                <td><img src="uploads/product/{{$product->images}}" height="100" width="100"></td>
+                                <td><img src="{{asset('uploads/product')}}/{{$product->images}}" height="100" width="100"></td>
                                 <td>{{$product->content}}</td>
                                 <td>{{$product->category->name}}</td>
                                 <td>{{$product->brand->name}}</td>

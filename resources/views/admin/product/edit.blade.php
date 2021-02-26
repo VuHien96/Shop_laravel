@@ -4,7 +4,7 @@
     <section id="main-content">
         <section class="wrapper">
             <div class="form-w3layouts">
-                <!-- page start-->
+                <!-- pages start-->
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
@@ -27,17 +27,17 @@
                                                    placeholder="Nhập tên giá sản phẩm" value="{{$product->price}}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputFile">Ảnh sản phẩm</label>
-                                            <input type="file" name="images" id="exampleInputFile">
+                                            <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
+                                            <input type="file" name="images" class="form-control" id="exampleInputEmail1">
                                             <img src="{{asset('uploads/product')}}/{{$product->images}}" height="100" width="100">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Miêu tả ngắn</label>
-                                            <textarea rows="8" class="form-control " id="comment" name="contents" required="">{{$product->content}}</textarea>
+                                            <textarea rows="8" class="form-control " id="ckeditor1" name="contents" required="">{{$product->content}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nội dung</label>
-                                            <textarea rows="8" class="form-control " id="comment" name="description" required="">{{$product->description}}</textarea>
+                                            <textarea rows="8" class="form-control " id="ckeditor2" name="description" required="">{{$product->description}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputSuccess">Nhăn hiệu</label>
@@ -79,7 +79,7 @@
 
                     </div>
                 </div>
-                <!-- page end-->
+                <!-- pages end-->
             </div>
         </section>
         <!-- footer -->

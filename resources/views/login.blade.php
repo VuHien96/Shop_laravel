@@ -35,6 +35,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h6><a href="#">Forgot Password?</a></h6>
             <div class="clearfix"></div>
             <input type="submit" value="Sign In" name="login">
+
+            {{-- Login with Facebook --}}
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ url('auth/facebook') }}"
+                   style="background: #3B5499; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with Facebook
+                </a>
+            </div>
         </form>
         <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
     </div>

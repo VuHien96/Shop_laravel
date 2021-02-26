@@ -28,7 +28,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="{{asset('admin/css/monthly.css')}}">
     <!-- //calendar -->
 
-    <link rel="stylesheet" href="{{asset('admin/css/jConfirm.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.2-dev/css/formValidation.min.css"/>
+
+    <link rel="stylesheet" href="{{asset('admin/css/jConfirm.css')}}"/>
     <!-- //font-awesome icons -->
     <script src="{{asset('admin/js/jquery2.0.3.min.js')}}"></script>
     <script src="{{asset('admin/js/raphael-min.js')}}"></script>
@@ -59,6 +61,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- calendar -->
 <script type="text/javascript" src="{{assert('admin/js/monthly.js')}}"></script>
 <script src="{{asset('admin/js/jConfirm.min.js')}}"></script>
+
+<!-- ckeditor-->
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<!-- formValidation-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/formvalidation/0.6.2-dev/js/formValidation.min.js"></script>
+<script>
+    CKEDITOR.replace('ckeditor1');
+    CKEDITOR.replace('ckeditor2');
+</script>
+
+<script type="text/javascript">
+    $.validate({
+
+    });
+</script>
 
 <script>
     $(document).ready(function() {

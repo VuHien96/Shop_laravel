@@ -4,7 +4,7 @@
     <section id="main-content">
         <section class="wrapper">
             <div class="form-w3layouts">
-                <!-- page start-->
+                <!-- pages start-->
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
@@ -41,7 +41,7 @@
 
                     </div>
                 </div>
-                <!-- page end-->
+                <!-- pages end-->
             </div>
         </section>
         <!-- footer -->

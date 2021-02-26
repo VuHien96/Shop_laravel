@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\Session;
 class ProductController extends Controller
 {
 
-    public function AuthLogin(){
+    public function AuthLogin()
+    {
 
         $admin_id = Session::get('id');
-        if($admin_id){
+        if ($admin_id) {
             return redirect()->route('admin.dashboard');
-        }else{
+        } else {
             return redirect()->route('admin.login')->send();
         }
     }
@@ -30,8 +31,8 @@ class ProductController extends Controller
     public function index()
     {
         $this->AuthLogin();
-        $products = Product::orderBy('id','desc')->paginate(5);
-        return view('admin.product.list',compact('products'));
+        $products = Product::orderBy('id', 'desc')->paginate(5);
+        return view('admin.product.list', compact('products'));
     }
 
     /**
@@ -43,13 +44,13 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin.product.create',compact('categories','brands'));
+        return view('admin.product.create', compact('categories', 'brands'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -69,22 +70,22 @@ class ProductController extends Controller
         $get_image = $request->file('images');
 
         //them hinh anh
-        if($get_image){
+        if ($get_image) {
 
             $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move($path,$new_image);
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
             $product->images = $new_image;
         }
         $product->save();
-        return redirect()->route('products.index')->with(['message'=>'Tao moi thanh cong','alert'=>'success']);
+        return redirect()->route('products.index')->with(['message' => 'Tao moi thanh cong', 'alert' => 'success']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -95,7 +96,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -103,14 +104,14 @@ class ProductController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
         $product = Product::find($id);
-        return view('admin.product.edit',compact('product','categories','brands'));
+        return view('admin.product.edit', compact('product', 'categories', 'brands'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -129,30 +130,40 @@ class ProductController extends Controller
         $path = 'uploads/product/';
         $get_image = $request->file('images');
 
-        if($get_image){
+        if ($get_image) {
 
             $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move($path,$new_image);
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
             $product->images = $new_image;
         }
         $product->save();
-        return redirect()->route('products.index')->with(['message'=>'Sửa thanh cong','alert'=>'success']);
+        return redirect()->route('products.index')->with(['message' => 'Sửa thanh cong', 'alert' => 'success']);
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $product=Product::find($id);
+        $product = Product::find($id);
 
         $product->delete();
-        return redirect()->route('products.index')->with(['message'=>'Xoa thanh cong','alert'=>'success']);
+        return redirect()->route('products.index')->with(['message' => 'Xoa thanh cong', 'alert' => 'success']);
+    }
+
+    public function getDetailsProduct($id)
+    {
+        $product = Product::find($id);
+        $brands = Brand::all();
+        $categories = Category::all();
+        $category_id = $product->category_id;
+        $relateds = Product::where('category_id',$category_id)->where('id','!=',$id)->latest()->limit(3)->get();
+        return view('pages.product.show_details', compact('product','categories','brands','relateds'));
     }
 }

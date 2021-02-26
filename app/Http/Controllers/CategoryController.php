@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
+use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -102,5 +104,13 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('categories.index')->with(['message' => 'Xóa danh mục thành công', 'alert' => 'success']);
 
+    }
+
+    public function getProductByCategory($id)
+    {
+        $brands = Brand::all();
+        $categories = Category::all();
+        $products = Product::where('category_id', $id)->latest()->paginate(6);
+        return view('pages.category.show-product-category', compact('products', 'categories', 'brands'));
     }
 }

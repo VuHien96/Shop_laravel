@@ -188,12 +188,12 @@
         <!--  notification end -->
     </div>
     <div class="top-nav clearfix">
-        <!--search & user info start-->
+        <!--search & pages info start-->
         <ul class="nav pull-right top-menu">
             <li>
                 <input type="text" class="form-control search" placeholder=" Search">
             </li>
-            <!-- user login dropdown start-->
+            <!-- pages login dropdown start-->
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="images/2.png">
@@ -208,9 +208,9 @@
                     <li><a href="{{route('admin.logout')}}"><i class="fa fa-key"></i> Log Out</a></li>
                 </ul>
             </li>
-            <!-- user login dropdown end -->
+            <!-- pages login dropdown end -->
 
         </ul>
-        <!--search & user info end-->
+        <!--search & pages info end-->
     </div>
 </header>

@@ -39,6 +39,16 @@
                         <li><a href="{{route('products.create')}}">Tạo mới sản phẩm</a></li>
                     </ul>
                 </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-table"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{route('orders.index')}}">Danh sách đơn hàng</a></li>
+                        <li><a href="">Tạo mới</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- sidebar menu end-->

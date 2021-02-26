@@ -4,7 +4,7 @@
     <section id="main-content">
         <section class="wrapper">
             <div class="form-w3layouts">
-                <!-- page start-->
+                <!-- pages start-->
                 <div class="row">
                     <div class="col-lg-12">
                         <section class="panel">
@@ -17,8 +17,9 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Tên sản phẩm</label>
-                                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                                   placeholder="Nhập tên sản phẩm">
+                                            <input type="text" name="name" class="form-control"
+                                                   placeholder="Nhập tên sản phẩm"
+                                                   data-validation="length" data-validation-length="min10" data-validation-error-msg="Làm ơn điền ít nhất 10 ký tự">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Giá sản phẩm</label>
@@ -26,17 +27,16 @@
                                                    placeholder="Nhập tên giá sản phẩm">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputFile">Ảnh sản phẩm</label>
-                                            <input type="file" name="images" id="exampleInputFile">
-                                            <p class="help-block">Example block-level help text here.</p>
+                                            <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
+                                            <input type="file" name="images" class="form-control" id="exampleInputEmail1">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Miêu tả ngắn</label>
-                                            <textarea rows="8" class="form-control " id="comment" name="contents" required=""></textarea>
+                                            <textarea rows="8" class="form-control " id="ckeditor1" name="contents" required=""></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nội dung</label>
-                                            <textarea rows="8" class="form-control " id="comment" name="description" required=""></textarea>
+                                            <textarea rows="8" class="form-control " id="ckeditor2" name="description" required=""></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputSuccess">Nhăn hiệu</label>
@@ -72,7 +72,7 @@
 
                     </div>
                 </div>
-                <!-- page end-->
+                <!-- pages end-->
             </div>
         </section>
         <!-- footer -->
